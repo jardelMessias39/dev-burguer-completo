@@ -26,7 +26,7 @@ export const Content = styled.div`
   justify-content: center;
   gap: 30px;
   width: 100%;
-  max-width: 1400px; /* Largura expandida para preencher a tela */
+  max-width: 1400px;
   margin: 40px auto;
   align-items: flex-start;
   padding: 0 20px;
@@ -35,7 +35,13 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  @media (max-width: 768px) {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
 `;
+
 
 export const CartItems = styled.div`
   background: #ffffff;
@@ -59,11 +65,11 @@ export const Title = styled.h1`
 
 export const Header = styled.div`
   display: grid;
-  grid-template-columns: 120px 2fr 1fr 1fr 1fr 60px; /* Colunas proporcionais */
+  grid-template-columns: 120px 2fr 1fr 1fr 1fr 60px;
   padding: 15px 25px;
   background-color: #484848;
   align-items: center;
-  
+
   p {
     font-size: 17px;
     color: #ffffff;
@@ -74,6 +80,10 @@ export const Header = styled.div`
   p:nth-child(2) {
     text-align: left;
     padding-left: 20px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -119,19 +129,6 @@ export const Body = styled.div`
       border-radius: 6px;
       font-size: 20px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.2s;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    
-    p {
-      color: #000;
-      margin: 0;
     }
   }
 
@@ -141,13 +138,44 @@ export const Body = styled.div`
     cursor: pointer;
     font-size: 22px;
     color: #ef4444;
-    transition: transform 0.2s;
+  }
 
-    &:hover {
-      transform: scale(1.2);
+  /* 🔽 MOBILE */
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    p {
+      text-align: center;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    .quantity-container {
+      justify-content: center;
+      gap: 20px;
+
+      button {
+        height: 36px;
+        width: 36px;
+        font-size: 22px;
+      }
+    }
+
+    .delete-button {
+      font-size: 26px;
     }
   }
 `;
+
 
 export const EmptyCart = styled.p`
   padding: 50px;
